@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: for f in SahanAiSignal*.zip; do unzip -o "$f"; done
+      - run: unzip -o "$(ls v*.zip | sort -V | tail -1)"
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
